@@ -12,7 +12,7 @@ An artificial neuron is inspired by the biological neuron. Its primary function 
 
 La clase Neuron simula el comportamiento de una neurona real.
 
-**Fuction Inicialización (__init__) Atributos**
+#### Fuction Inicialización (__init__) Atributos
     `Atributos `:
     `Pesos (weight)`: Determinan la importancia de cada entrada.
     `Sesgo (bias)`: Permite ajustar la salida de la neurona.
@@ -20,7 +20,7 @@ La clase Neuron simula el comportamiento de una neurona real.
     `Entradas (inputs)`: Guarda la entrada recibida.
     `Gradientes (dweight, dbias)`: Se usan en el proceso de ajuste de los pesos durante el aprendizaje.
 
-**Fuction Activate(self, x)**
+#### Fuction Activate(self, x)
     
 Esta función aplica la función de activación Sigmoide:
 
@@ -39,7 +39,7 @@ Se usa en redes neuronales para introducir no linealidad y decidir la activació
         """
         return 1 / (1 + np.exp(-x))
     ```
-**Fuction derivate_Activate(self, x)**
+#### Fuction derivate_Activate(self, x)**
     
 Calcula la derivada de la función Sigmoide, que es útil para la retropropagación.
 La derivada de la sigmoide se calcula así:`σ (x)=σ(x)⋅(1−σ(x)) `
@@ -56,7 +56,7 @@ La derivada de la sigmoide se calcula así:`σ (x)=σ(x)⋅(1−σ(x)) `
         """
         return x * (1 - x)
     ```
-**Fuction forward(self, inputs)**
+#### Fuction forward(self, inputs)**
     
 Calcula la salida de la neurona en la fase de propagación hacia adelante (forward pass):
 
@@ -79,7 +79,7 @@ Aplica la función de activación
         self.output = self.activate(weighted_sum)
         return self.output
     ```
-**Fuction forward(self, inputs)**
+#### Fuction forward(self, inputs)**
     
 Realiza el ajuste de pesos mediante retropropagación:
 
