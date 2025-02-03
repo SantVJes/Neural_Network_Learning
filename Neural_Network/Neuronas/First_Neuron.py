@@ -87,8 +87,4 @@ class Neuron:
         return d_input
 
 
-if __name__== "__main__" :
-    Neuron = Neuron (3)
-    inputs = np.array([1,2,3] )
-    output = Neuron.forward(inputs)
-    print ("output " ,output)
+    

@@ -8,26 +8,28 @@ An artificial neuron is inspired by the biological neuron. Its primary function 
 
 ### Fuction the class Neuronal 
 
-### Fuction the class Neuronal 
+ubicacion de la clase :
+Neural_Network/Neuronas/First_Neuron.py
 
 La clase Neuron simula el comportamiento de una neurona real.
 
-#### Fuction Inicialización (__init__) Atributos
-    `Atributos `:
-    `Pesos (weight)`: Determinan la importancia de cada entrada.
-    `Sesgo (bias)`: Permite ajustar la salida de la neurona.
-    `Salida (output)`: Almacena el resultado después de aplicar la función de activación.
-    `Entradas (inputs)`: Guarda la entrada recibida.
-    `Gradientes (dweight, dbias)`: Se usan en el proceso de ajuste de los pesos durante el aprendizaje.
+### Fuction Inicialización (__init__) Atributos
+Atributos :
 
-#### Fuction Activate(self, x)
+`Pesos (weight)`: Determinan la importancia de cada entrada.
+`Sesgo (bias)`: Permite ajustar la salida de la neurona.
+`Salida (output)`: Almacena el resultado después de aplicar la función de activación.
+`Entradas (inputs)`: Guarda la entrada recibida.
+`Gradientes (dweight, dbias)`: Se usan en el proceso de ajuste de los pesos durante el aprendizaje.
+
+### Fuction Activate(self, x)
     
 Esta función aplica la función de activación Sigmoide:
 
 Convierte cualquier valor en un rango entre 0 y 1.
 Se usa en redes neuronales para introducir no linealidad y decidir la activación de la neurona.
 
-    ```
+    ```bash
        def activate(self, x):
         """
         Applies the sigmoid activation function.
@@ -39,12 +41,12 @@ Se usa en redes neuronales para introducir no linealidad y decidir la activació
         """
         return 1 / (1 + np.exp(-x))
     ```
-#### Fuction derivate_Activate(self, x)**
+### Fuction derivate_Activate(self, x)
     
 Calcula la derivada de la función Sigmoide, que es útil para la retropropagación.
 La derivada de la sigmoide se calcula así:`σ (x)=σ(x)⋅(1−σ(x)) `
     
-    ```
+    ```bash
         def derivate_activate(self, x):
         """
         Computes the derivative of the sigmoid function.
@@ -56,7 +58,7 @@ La derivada de la sigmoide se calcula así:`σ (x)=σ(x)⋅(1−σ(x)) `
         """
         return x * (1 - x)
     ```
-#### Fuction forward(self, inputs)**
+### Fuction forward(self, inputs)
     
 Calcula la salida de la neurona en la fase de propagación hacia adelante (forward pass):
 
@@ -64,7 +66,7 @@ Multiplica las entradas por sus pesos.
 Suma el sesgo.
 Aplica la función de activación
 
-    ```
+    ```bash
       def forward(self, inputs):
         """
         Computes the forward propagation.
@@ -79,14 +81,14 @@ Aplica la función de activación
         self.output = self.activate(weighted_sum)
         return self.output
     ```
-#### Fuction forward(self, inputs)**
+### Fuction forward(self, inputs)
     
 Realiza el ajuste de pesos mediante retropropagación:
 
 Calcula la derivada del error con respecto a la salida.
 Ajusta los pesos y el sesgo con descenso de gradiente.
 
-    ```
+    ```bash
         def backward(self, d_output, learning_rate):
         """
         Computes the backward propagation and updates weights and biases.
@@ -109,3 +111,5 @@ Ajusta los pesos y el sesgo con descenso de gradiente.
         return d_input
 
     ```
+
+## Layers 
