@@ -8,9 +8,11 @@ An artificial neuron is inspired by the biological neuron. Its primary function 
 
 ### Fuction the class Neuronal 
 
+### Fuction the class Neuronal 
+
 La clase Neuron simula el comportamiento de una neurona real.
 
- ** Fuction Inicialización (__init__) Atributos **
+**Fuction Inicialización (__init__) Atributos**
     `Atributos `:
     `Pesos (weight)`: Determinan la importancia de cada entrada.
     `Sesgo (bias)`: Permite ajustar la salida de la neurona.
@@ -18,12 +20,12 @@ La clase Neuron simula el comportamiento de una neurona real.
     `Entradas (inputs)`: Guarda la entrada recibida.
     `Gradientes (dweight, dbias)`: Se usan en el proceso de ajuste de los pesos durante el aprendizaje.
 
-** Fuction Activate(self, x) **
+**Fuction Activate(self, x)**
     
-   Esta función aplica la función de activación Sigmoide:
+Esta función aplica la función de activación Sigmoide:
 
-   Convierte cualquier valor en un rango entre 0 y 1.
-   Se usa en redes neuronales para introducir no linealidad y decidir la activación de la neurona.
+Convierte cualquier valor en un rango entre 0 y 1.
+Se usa en redes neuronales para introducir no linealidad y decidir la activación de la neurona.
 
     ```
        def activate(self, x):
@@ -37,10 +39,10 @@ La clase Neuron simula el comportamiento de una neurona real.
         """
         return 1 / (1 + np.exp(-x))
     ```
- ** Fuction derivate_Activate(self, x) **
+**Fuction derivate_Activate(self, x)**
     
-   Calcula la derivada de la función Sigmoide, que es útil para la retropropagación.
-   La derivada de la sigmoide se calcula así:`σ (x)=σ(x)⋅(1−σ(x)) `
+Calcula la derivada de la función Sigmoide, que es útil para la retropropagación.
+La derivada de la sigmoide se calcula así:`σ (x)=σ(x)⋅(1−σ(x)) `
     
     ```
         def derivate_activate(self, x):
@@ -54,13 +56,13 @@ La clase Neuron simula el comportamiento de una neurona real.
         """
         return x * (1 - x)
     ```
-   ** Fuction forward(self, inputs) **
+**Fuction forward(self, inputs)**
     
-   Calcula la salida de la neurona en la fase de propagación hacia adelante (forward pass):
+Calcula la salida de la neurona en la fase de propagación hacia adelante (forward pass):
 
-   Multiplica las entradas por sus pesos.
-   Suma el sesgo.
-   Aplica la función de activación
+Multiplica las entradas por sus pesos.
+Suma el sesgo.
+Aplica la función de activación
 
     ```
       def forward(self, inputs):
@@ -77,12 +79,12 @@ La clase Neuron simula el comportamiento de una neurona real.
         self.output = self.activate(weighted_sum)
         return self.output
     ```
-   ** Fuction forward(self, inputs) **
+**Fuction forward(self, inputs)**
     
-   Realiza el ajuste de pesos mediante retropropagación:
+Realiza el ajuste de pesos mediante retropropagación:
 
-   Calcula la derivada del error con respecto a la salida.
-   Ajusta los pesos y el sesgo con descenso de gradiente.
+Calcula la derivada del error con respecto a la salida.
+Ajusta los pesos y el sesgo con descenso de gradiente.
 
     ```
         def backward(self, d_output, learning_rate):
