@@ -10,7 +10,7 @@ class Layer:
 
     Attributes:
         num_neurons (int): The maximum number of neurons in this layer.
-        num_inputs (int): The number of inputs for the layer in the neural network.
+        num_inputs (int): The number of inputs for the lptyayer in the neural network.
         neurons (list): A list containing neuron objects in the layer.
     """
 
@@ -53,12 +53,3 @@ class Layer:
         return d_inputs
 
 
-
-if __name__ == "__main__":
-    layer = Layer(3,4 )
-    inputs = np.array([1,8,5,6])
-    
-    layer_output = layer.forward(inputs)
-    
-    print("layer outputs  " , layer_output)
-    

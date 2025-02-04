@@ -87,4 +87,6 @@ class Neuron:
         return d_input
 
 
-    
+ 
+if __name__ == "__main__":
+       Neuron = Neuron(3)
