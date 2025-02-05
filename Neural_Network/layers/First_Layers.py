@@ -2,7 +2,7 @@
 import numpy as np 
 
 # Import the Neuron class from the corresponding module
-from Neural_Network.Neuronas.First_Neuron import Neuron
+from Neuronas.First_Neuron import Neuron
 
 class Layer:
     """
